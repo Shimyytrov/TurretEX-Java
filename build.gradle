@@ -69,7 +69,7 @@ jar{
     }
 
     from(rootDir){
-        include "mod.hjson"
+        include "mod.json"
     }
 
     from("assets/"){
