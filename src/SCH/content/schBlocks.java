@@ -12,7 +12,17 @@ public class schBlocks {
 
     public static void load() {
         flagSCH = new Wall("Schmitrovland") {{
-            requirements(Category.defense, ItemStack.with(Items.copper, 1), false);
+            requirements(Category.defense, ItemStack.with(Items.copper, 1), true);
+            health = 16;
+            size = 3;
+        }};
+        flagDEU = new Wall("Deutschland") {{
+            requirements(Category.defense, ItemStack.with(Items.copper, 1), true);
+            health = 16;
+            size = 3;
+        }};
+        flagPOL = new Wall("Polska") {{
+            requirements(Category.defense, ItemStack.with(Items.copper, 1), true);
             health = 16;
             size = 3;
         }};
