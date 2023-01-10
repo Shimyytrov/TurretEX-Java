@@ -86,7 +86,6 @@ public class schBlocks {
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
             shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
-            researchCostMultiplier = 0.05f;
 
             limitRange();
         }};
@@ -131,7 +130,6 @@ public class schBlocks {
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
             shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKII");
-            researchCostMultiplier = 0.05f;
 
             limitRange();
         }};
