@@ -50,7 +50,13 @@ public class schBlocks {
     KavtashkaMKI, KavtashkaMKII, KavtashkaMKIII, KavtashkaMKIV,
     Satan,
     GoryMKI, GoryMKII,
-    Kalinka, Katyusha, KatyushaCHEAT
+    Kalinka, Katyusha, KatyushaCHEAT,
+
+    /* DEU Turrets */
+    SteinkaMKI, SteinkaMKII, SteinkaMKIII,
+
+    /* POL Turrets */
+    Niedzwiedz, NiedzwiedzA2, Rozpierducha
     ;
 
     public static void load() {
@@ -198,6 +204,272 @@ public class schBlocks {
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
             shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKIII");
+
+            limitRange();
+        }};
+        KavtashkaMKIV = new ItemTurret("KavtashkaMKIV"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 45, Items.lead, 15, Items.graphite, 10));
+            ammo(
+                Items.copper,  new BasicBulletType(8f, 10){{
+                    width = 4f;
+                    height = 9f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    lifetime = 60f;
+                    ammoMultiplier = 80;
+                }},
+                Items.lead, new BasicBulletType(8f, 12){{
+                    width = 9f;
+                    height = 12f;
+                    ammoMultiplier = 80;
+                    lifetime = 60f;
+                }},
+                Items.graphite, new BasicBulletType(8f, 18){{
+                    width = 7f;
+                    height = 9f;
+                    ammoMultiplier = 100;
+                    lifetime = 60f;
+                }}
+            );
+
+            shoot = new ShootAlternate(0f);
+
+            maxAmmo = 8192;
+            size = 2;
+            shootY = 6f;
+            reload = 1f;
+            range = 192;
+            shootCone = 5f;
+            ammoUseEffect = Fx.casing1;
+            health = 336;
+            inaccuracy = 4f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
+            shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKIV");
+
+            limitRange();
+        }};
+        Kalinka = new ItemTurret("Kalinka"){{
+            requirements(Category.turret, ItemStack.with(Items.silicon, 15, Items.lead, 15, Items.graphite, 35));
+            ammo(
+                Items.blastCompound, new MissileBulletType(4.8f, 10){{
+                    width = 8f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    homingPower = 0.3f;
+                    homingRange = 250f;
+                    splashDamageRadius = 72f;
+                    splashDamage = 72f * 1.5f;
+                    ammoMultiplier = 5f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
+                    lifetime = 180;
+                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                }},
+                Items.pyratite, new MissileBulletType(4.5f, 12){{
+                    frontColor = Pal.lightishOrange;
+                    backColor = Pal.lightOrange;
+                    width = 7f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    homingPower = 0.1f;
+                    homingRange = 250f;
+                    splashDamageRadius = 48f;
+                    splashDamage = 48f * 1.5f;
+                    makeFire = true;
+                    ammoMultiplier = 5f;
+                    hitEffect = Fx.blastExplosion;
+                    status = StatusEffects.burning;
+                    lifetime = 180;
+                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                }},
+                Items.silicon, new MissileBulletType(8f, 72){{
+                    trailColor = Pal.gray;
+                    frontColor = Pal.gray;
+                    backColor = Pal.gray;
+                    width = 7f;
+                    height = 9f;
+                    homingPower = 0.8f;
+                    homingRange = 250f;
+                    ammoMultiplier = 5;
+                    lifetime = 120f;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 6;
+                barrels = 3;
+                spread = 3.5f;
+                shotDelay = 4f;
+            }};
+
+            size = 2;
+            shootY = 7f;
+            reload = 30f;
+            range = 360;
+            health = 336;
+            inaccuracy = 10f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
+            shootSound = Vars.tree.loadSound("Turrets/KalinkaRL");
+
+            limitRange();
+        }};
+        Katyusha = new ItemTurret("Katyusha"){{
+            requirements(Category.turret, ItemStack.with(Items.silicon, 150, Items.lead, 150, Items.graphite, 100, Items.copper, 50, Items.titanium, 25));
+            ammo(
+                Items.blastCompound, new MissileBulletType(4.8f, 10){{
+                    width = 8f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    homingPower = 0.3f;
+                    homingRange = 2500f;
+                    splashDamageRadius = 72f;
+                    splashDamage = 72f * 1.5f;
+                    ammoMultiplier = 5f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
+                    lifetime = 3600;
+                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                }},
+                Items.pyratite, new MissileBulletType(4.5f, 12){{
+                    frontColor = Pal.lightishOrange;
+                    backColor = Pal.lightOrange;
+                    width = 7f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    homingPower = 0.1f;
+                    homingRange = 2500f;
+                    splashDamageRadius = 48f;
+                    splashDamage = 48f * 1.5f;
+                    makeFire = true;
+                    ammoMultiplier = 5f;
+                    hitEffect = Fx.blastExplosion;
+                    status = StatusEffects.burning;
+                    lifetime = 3600;
+                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                }},
+                Items.silicon, new MissileBulletType(8f, 72){{
+                    trailColor = Pal.gray;
+                    frontColor = Pal.gray;
+                    backColor = Pal.gray;
+                    width = 7f;
+                    height = 9f;
+                    homingPower = 0.8f;
+                    homingRange = 2500f;
+                    ammoMultiplier = 5;
+                    lifetime = 3600;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 60;
+                shotDelay = 1f;
+            }};
+
+            maxAmmo = 240;
+            size = 4;
+            shootY = -7f;
+            reload = 3600f;
+            range = 60000;
+            health = 2500;
+            inaccuracy = 360f;
+            shootCone = 360f;
+            rotateSpeed = 0f;
+            coolant = consumeCoolant(0.1f);
+            shootSound = Vars.tree.loadSound("Turrets/KalinkaRL");
+
+            limitRange();
+        }};
+        KatyushaCHEAT = new ItemTurret("KatyushaCHEAT"){{
+            requirements(Category.turret, ItemStack.with(Items.silicon, 150, Items.lead, 150, Items.graphite, 100, Items.copper, 50, Items.titanium, 25));
+            ammo(
+                Items.copper, new MissileBulletType(4.8f, 10){{
+                    width = 8f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    homingPower = 0.3f;
+                    homingRange = 2500f;
+                    splashDamageRadius = 72f;
+                    splashDamage = 72f * 1.5f;
+                    ammoMultiplier = 60f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
+                    lifetime = 3600;
+                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                }},
+                Items.blastCompound, new MissileBulletType(4.8f, 10){{
+                    width = 8f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    homingPower = 0.3f;
+                    homingRange = 2500f;
+                    splashDamageRadius = 72f;
+                    splashDamage = 72f * 1.5f;
+                    ammoMultiplier = 60f;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
+
+                    status = StatusEffects.blasted;
+                    statusDuration = 60f;
+                    lifetime = 3600;
+                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                }},
+                Items.pyratite, new MissileBulletType(4.5f, 12){{
+                    frontColor = Pal.lightishOrange;
+                    backColor = Pal.lightOrange;
+                    width = 7f;
+                    height = 8f;
+                    shrinkY = 0f;
+                    homingPower = 0.1f;
+                    homingRange = 2500f;
+                    splashDamageRadius = 48f;
+                    splashDamage = 48f * 1.5f;
+                    makeFire = true;
+                    ammoMultiplier = 60;
+                    hitEffect = Fx.blastExplosion;
+                    status = StatusEffects.burning;
+                    lifetime = 3600;
+                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                }},
+                Items.silicon, new MissileBulletType(8f, 72){{
+                    trailColor = Pal.gray;
+                    frontColor = Pal.gray;
+                    backColor = Pal.gray;
+                    width = 7f;
+                    height = 9f;
+                    homingPower = 0.8f;
+                    homingRange = 2500f;
+                    ammoMultiplier = 60;
+                    lifetime = 3600;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }}
+            );
+
+            shoot = new ShootAlternate(0f);
+
+            maxAmmo = 10124;
+            size = 4;
+            shootY = -7f;
+            reload = 1f;
+            range = 60000;
+            health = 2500;
+            inaccuracy = 360f;
+            shootCone = 360f;
+            rotateSpeed = 0f;
+            coolant = consumeCoolant(0.1f);
+            shootSound = Vars.tree.loadSound("Turrets/KalinkaRL");
 
             limitRange();
         }};
