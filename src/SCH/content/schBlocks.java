@@ -92,15 +92,12 @@ public class schBlocks {
                 Items.lead, new BasicBulletType(8f, 12){{
                     width = 9f;
                     height = 12f;
-                    reloadMultiplier = 0.6f;
                     ammoMultiplier = 4;
                     lifetime = 60f;
                 }},
                 Items.graphite, new BasicBulletType(8f, 18){{
                     width = 7f;
                     height = 9f;
-                    homingPower = 0.1f;
-                    reloadMultiplier = 1.5f;
                     ammoMultiplier = 5;
                     lifetime = 60f;
                 }}
@@ -136,15 +133,12 @@ public class schBlocks {
                 Items.lead, new BasicBulletType(8f, 12){{
                     width = 9f;
                     height = 12f;
-                    reloadMultiplier = 0.6f;
                     ammoMultiplier = 4;
                     lifetime = 60f;
                 }},
                 Items.graphite, new BasicBulletType(8f, 18){{
                     width = 7f;
                     height = 9f;
-                    homingPower = 0.1f;
-                    reloadMultiplier = 1.5f;
                     ammoMultiplier = 5;
                     lifetime = 60f;
                 }}
@@ -163,6 +157,47 @@ public class schBlocks {
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
             shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKII");
+
+            limitRange();
+        }};
+        KavtashkaMKIII = new ItemTurret("KavtashkaMKIII"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 45, Items.lead, 15, Items.graphite, 5));
+            ammo(
+                Items.copper,  new BasicBulletType(8f, 10){{
+                    width = 4f;
+                    height = 9f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    lifetime = 60f;
+                    ammoMultiplier = 15;
+                }},
+                Items.lead, new BasicBulletType(8f, 12){{
+                    width = 9f;
+                    height = 12f;
+                    ammoMultiplier = 15;
+                    lifetime = 60f;
+                }},
+                Items.graphite, new BasicBulletType(8f, 18){{
+                    width = 7f;
+                    height = 9f;
+                    ammoMultiplier = 20;
+                    lifetime = 60f;
+                }}
+            );
+
+            shoot = new ShootAlternate(0f);
+
+            size = 2;
+            shootY = 6f;
+            reload = 3f;
+            range = 192;
+            shootCone = 5f;
+            ammoUseEffect = Fx.casing1;
+            health = 336;
+            inaccuracy = 1f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
+            shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKIII");
 
             limitRange();
         }};
