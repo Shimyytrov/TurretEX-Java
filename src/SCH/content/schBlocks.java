@@ -208,7 +208,7 @@ public class schBlocks {
             limitRange();
         }};
         KavtashkaMKIV = new ItemTurret("KavtashkaMKIV"){{
-            requirements(Category.turret, ItemStack.with(Items.copper, 45, Items.lead, 15, Items.graphite, 10));
+            requirements(Category.turret, ItemStack.with(Items.copper, 45, Items.lead, 15, Items.graphite, 5));
             ammo(
                 Items.copper,  new BasicBulletType(8f, 10){{
                     width = 4f;
@@ -216,18 +216,18 @@ public class schBlocks {
                     shootEffect = Fx.shootSmall;
                     smokeEffect = Fx.shootSmallSmoke;
                     lifetime = 60f;
-                    ammoMultiplier = 80;
+                    ammoMultiplier = 15;
                 }},
                 Items.lead, new BasicBulletType(8f, 12){{
                     width = 9f;
                     height = 12f;
-                    ammoMultiplier = 80;
+                    ammoMultiplier = 15;
                     lifetime = 60f;
                 }},
                 Items.graphite, new BasicBulletType(8f, 18){{
                     width = 7f;
                     height = 9f;
-                    ammoMultiplier = 100;
+                    ammoMultiplier = 20;
                     lifetime = 60f;
                 }}
             );
@@ -242,7 +242,7 @@ public class schBlocks {
             shootCone = 5f;
             ammoUseEffect = Fx.casing1;
             health = 336;
-            inaccuracy = 4f;
+            inaccuracy = 1f;
             rotateSpeed = 10f;
             coolant = consumeCoolant(0.1f);
             shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKIV");
@@ -392,69 +392,69 @@ public class schBlocks {
         KatyushaCHEAT = new ItemTurret("KatyushaCHEAT"){{
             requirements(Category.turret, ItemStack.with(Items.silicon, 150, Items.lead, 150, Items.graphite, 100, Items.copper, 50, Items.titanium, 25));
             ammo(
-                Items.copper, new MissileBulletType(4.8f, 10){{
-                    width = 8f;
-                    height = 8f;
-                    shrinkY = 0f;
-                    homingPower = 0.3f;
-                    homingRange = 2500f;
-                    splashDamageRadius = 72f;
-                    splashDamage = 72f * 1.5f;
-                    ammoMultiplier = 60f;
-                    hitEffect = Fx.blastExplosion;
-                    despawnEffect = Fx.blastExplosion;
+                    Items.copper, new MissileBulletType(4.8f, 10){{
+                        width = 8f;
+                        height = 8f;
+                        shrinkY = 0f;
+                        homingPower = 0.3f;
+                        homingRange = 2500f;
+                        splashDamageRadius = 72f;
+                        splashDamage = 72f * 1.5f;
+                        ammoMultiplier = 60f;
+                        hitEffect = Fx.blastExplosion;
+                        despawnEffect = Fx.blastExplosion;
 
-                    status = StatusEffects.blasted;
-                    statusDuration = 60f;
-                    lifetime = 3600;
-                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
-                }},
-                Items.blastCompound, new MissileBulletType(4.8f, 10){{
-                    width = 8f;
-                    height = 8f;
-                    shrinkY = 0f;
-                    homingPower = 0.3f;
-                    homingRange = 2500f;
-                    splashDamageRadius = 72f;
-                    splashDamage = 72f * 1.5f;
-                    ammoMultiplier = 60f;
-                    hitEffect = Fx.blastExplosion;
-                    despawnEffect = Fx.blastExplosion;
+                        status = StatusEffects.blasted;
+                        statusDuration = 60f;
+                        lifetime = 3600;
+                        hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                    }},
+                    Items.blastCompound, new MissileBulletType(4.8f, 10){{
+                        width = 8f;
+                        height = 8f;
+                        shrinkY = 0f;
+                        homingPower = 0.3f;
+                        homingRange = 2500f;
+                        splashDamageRadius = 72f;
+                        splashDamage = 72f * 1.5f;
+                        ammoMultiplier = 60f;
+                        hitEffect = Fx.blastExplosion;
+                        despawnEffect = Fx.blastExplosion;
 
-                    status = StatusEffects.blasted;
-                    statusDuration = 60f;
-                    lifetime = 3600;
-                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
-                }},
-                Items.pyratite, new MissileBulletType(4.5f, 12){{
-                    frontColor = Pal.lightishOrange;
-                    backColor = Pal.lightOrange;
-                    width = 7f;
-                    height = 8f;
-                    shrinkY = 0f;
-                    homingPower = 0.1f;
-                    homingRange = 2500f;
-                    splashDamageRadius = 48f;
-                    splashDamage = 48f * 1.5f;
-                    makeFire = true;
-                    ammoMultiplier = 60;
-                    hitEffect = Fx.blastExplosion;
-                    status = StatusEffects.burning;
-                    lifetime = 3600;
-                    hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
-                }},
-                Items.silicon, new MissileBulletType(8f, 72){{
-                    trailColor = Pal.gray;
-                    frontColor = Pal.gray;
-                    backColor = Pal.gray;
-                    width = 7f;
-                    height = 9f;
-                    homingPower = 0.8f;
-                    homingRange = 2500f;
-                    ammoMultiplier = 60;
-                    lifetime = 3600;
-                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
-                }}
+                        status = StatusEffects.blasted;
+                        statusDuration = 60f;
+                        lifetime = 3600;
+                        hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                    }},
+                    Items.pyratite, new MissileBulletType(4.5f, 12){{
+                        frontColor = Pal.lightishOrange;
+                        backColor = Pal.lightOrange;
+                        width = 7f;
+                        height = 8f;
+                        shrinkY = 0f;
+                        homingPower = 0.1f;
+                        homingRange = 2500f;
+                        splashDamageRadius = 48f;
+                        splashDamage = 48f * 1.5f;
+                        makeFire = true;
+                        ammoMultiplier = 60;
+                        hitEffect = Fx.blastExplosion;
+                        status = StatusEffects.burning;
+                        lifetime = 3600;
+                        hitSound = Vars.tree.loadSound("Hits/ExplodeRL");
+                    }},
+                    Items.silicon, new MissileBulletType(8f, 72){{
+                        trailColor = Pal.gray;
+                        frontColor = Pal.gray;
+                        backColor = Pal.gray;
+                        width = 7f;
+                        height = 9f;
+                        homingPower = 0.8f;
+                        homingRange = 2500f;
+                        ammoMultiplier = 60;
+                        lifetime = 3600;
+                        hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                    }}
             );
 
             shoot = new ShootAlternate(0f);
@@ -470,6 +470,70 @@ public class schBlocks {
             rotateSpeed = 0f;
             coolant = consumeCoolant(0.1f);
             shootSound = Vars.tree.loadSound("Turrets/KalinkaRL");
+
+            limitRange();
+        }};
+        Satan = new ItemTurret("Satan"){{
+            requirements(Category.turret, ItemStack.with(Items.silicon, 50, Items.lead, 150, Items.graphite, 50, Items.copper, 200, Items.titanium, 100, Items.thorium, 50));
+            ammo(
+                    Items.thorium, new ArtilleryBulletType(8f, 8192){{
+                        width = 32f;
+                        height = 64f;
+                        splashDamageRadius = 1024f;
+                        splashDamage = 1024f * 1.5f;
+                        ammoMultiplier = 1f;
+                        hitEffect = Fx.reactorExplosion;
+                        despawnEffect = Fx.reactorExplosion;
+                        buildingDamageMultiplier = 0.1f;
+                        status = StatusEffects.blasted;
+                        statusDuration = 120f;
+                        lifetime = 1080;
+                        hitSound = Vars.tree.loadSound("Hits/SatanEXP");
+                        despawnSound = Vars.tree.loadSound("Hits/SatanEXP");
+                        shootEffect = Fx.shootBig2;
+                        smokeEffect = Fx.shootBigSmoke2;
+                        frontColor = Color.valueOf("FFD04D");
+                        backColor = Color.valueOf("863925");
+                        trailLength = 25;
+                        trailWidth = 15;
+                        trailColor = Color.valueOf("863925");
+                    }},
+                    Items.titanium, new ArtilleryBulletType(7f, 4096){{
+                        width = 32f;
+                        height = 64f;
+                        splashDamageRadius = 512f;
+                        splashDamage = 512f * 1.5f;
+                        ammoMultiplier = 1f;
+                        hitEffect = Fx.reactorExplosion;
+                        despawnEffect = Fx.reactorExplosion;
+                        buildingDamageMultiplier = 0.1f;
+                        status = StatusEffects.blasted;
+                        statusDuration = 90f;
+                        lifetime = 1080;
+                        hitSound = Vars.tree.loadSound("Hits/SatanEXP");
+                        despawnSound = Vars.tree.loadSound("Hits/SatanEXP");
+                        shootEffect = Fx.shootBig;
+                        smokeEffect = Fx.shootBigSmoke;
+                        frontColor = Color.valueOf("34FFFF");
+                        backColor = Color.valueOf("762EFF");
+                        trailLength = 25;
+                        trailWidth = 15;
+                        trailColor = Color.valueOf("762EFF");
+                    }}
+            );
+
+            shoot = new ShootAlternate(0f);
+
+            maxAmmo = 5;
+            size = 3;
+            shootY = 8f;
+            reload = 1080f;
+            range = 2048;
+            health = 2500;
+            inaccuracy = 0f;
+            shootCone = 0f;
+            rotateSpeed = 2f;
+            shootSound = Vars.tree.loadSound("Turrets/Satan");
 
             limitRange();
         }};
