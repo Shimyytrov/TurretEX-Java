@@ -537,5 +537,87 @@ public class schBlocks {
 
             limitRange();
         }};
+        GoryMKI = new ItemTurret("GoryMKI"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 25, Items.lead, 10));
+            ammo(
+                Items.copper, new FlakBulletType(12f, 15){{
+                    width = 2f;
+                    height = 9f;
+                    splashDamageRadius = 24f;
+                    splashDamage = 24f * 1.5f;
+                    ammoMultiplier = 5f;
+                    lifetime = 60;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }},
+                Items.lead, new FlakBulletType(12f, 24){{
+                    width = 2f;
+                    height = 9f;
+                    splashDamageRadius = 36f;
+                    splashDamage = 36f * 1.5f;
+                    ammoMultiplier = 5f;
+                    lifetime = 60;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    fragBullets = 8;
+                    fragBullet = new BasicBulletType(3f, 24){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                    }};
+                    hitSound = Vars.tree.loadSound("Hits/LeadHit");
+                }},
+                Items.metaglass, new FlakBulletType(12f, 36){{
+                    width = 2f;
+                    height = 9f;
+                    splashDamageRadius = 48f;
+                    splashDamage = 48f * 1.5f;
+                    ammoMultiplier = 5f;
+                    lifetime = 60;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    fragBullets = 12;
+                    fragBullet = new BasicBulletType(3f, 28){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                    }};
+                    hitSound = Vars.tree.loadSound("Hits/LeadHit");
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 6;
+                barrels = 3;
+                spread = 3.5f;
+                shotDelay = 4f;
+            }};
+
+            size = 2;
+            shootY = 7f;
+            reload = 30f;
+            range = 360;
+            health = 336;
+            inaccuracy = 10f;
+            rotateSpeed = 10f;
+            coolant = consumeCoolant(0.1f);
+            shootSound = Vars.tree.loadSound("Turrets/KalinkaRL");
+
+            limitRange();
+        }};
     };
 }; 
