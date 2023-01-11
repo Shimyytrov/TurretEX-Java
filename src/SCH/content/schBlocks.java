@@ -602,7 +602,8 @@ public class schBlocks {
 
             shoot = new ShootAlternate(){{
                 shots = 3;
-                shotDelay = 2f;
+                shotDelay = 3f;
+                barrels = 1;
             }};
 
             size = 1;
