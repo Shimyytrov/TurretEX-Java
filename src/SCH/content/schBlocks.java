@@ -524,14 +524,14 @@ public class schBlocks {
 
             shoot = new ShootAlternate(0f);
 
-            maxAmmo = 5;
+            maxAmmo = 6;
+            ammoPerShot = 3;
             size = 3;
             shootY = 8f;
             reload = 1080f;
             range = 2048;
             health = 2500;
             inaccuracy = 0f;
-            shootCone = 0f;
             rotateSpeed = 2f;
             shootSound = Vars.tree.loadSound("Turrets/Satan");
 
@@ -600,22 +600,19 @@ public class schBlocks {
                 }}
             );
 
-            shoot = new ShootAlternate(){{
-                shots = 6;
-                barrels = 3;
-                spread = 3.5f;
-                shotDelay = 4f;
-            }};
+            shoot = new ShootAlternate(0f);
 
             size = 1;
-            shootY = 7f;
-            reload = 30f;
-            range = 360;
-            health = 336;
-            inaccuracy = 10f;
-            rotateSpeed = 10f;
+            shootY = 3f;
+            reload = 15f;
+            range = 255;
+            health = 150;
+            inaccuracy = 7f;
+            rotateSpeed = 25f;
             coolant = consumeCoolant(0.1f);
-            shootSound = Vars.tree.loadSound("Turrets/KalinkaRL");
+            targetGround = false;
+            targetAir = true;
+            shootSound = Vars.tree.loadSound("Turrets/AA-sg");
 
             limitRange();
         }};
