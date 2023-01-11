@@ -301,10 +301,10 @@ public class schBlocks {
             );
 
             shoot = new ShootAlternate(){{
-                shots = 6;
+                shots = 3;
                 barrels = 3;
                 spread = 3.5f;
-                shotDelay = 4f;
+                shotDelay = 5f;
             }};
 
             size = 2;
@@ -492,11 +492,11 @@ public class schBlocks {
                         despawnSound = Vars.tree.loadSound("Hits/SatanEXP");
                         shootEffect = Fx.shootBig2;
                         smokeEffect = Fx.shootBigSmoke2;
-                        frontColor = Color.valueOf("FFD04D");
-                        backColor = Color.valueOf("863925");
+                        frontColor = Color.valueOf("cc00ff");
+                        backColor = Color.valueOf("762EFF");
                         trailLength = 25;
                         trailWidth = 15;
-                        trailColor = Color.valueOf("863925");
+                        trailColor = Color.valueOf("762EFF");
                     }},
                     Items.titanium, new ArtilleryBulletType(7f, 4096){{
                         width = 32f;
@@ -596,13 +596,13 @@ public class schBlocks {
                         despawnEffect = Fx.none;
                         collidesGround = true;
                     }};
-                    hitSound = Vars.tree.loadSound("Hits/LeadHit");
+                    hitSound = Vars.tree.loadSound("Hits/GlassHit");
                 }}
             );
 
             shoot = new ShootAlternate(){{
                 shots = 3;
-                shotDelay = 3f;
+                shotDelay = 4f;
                 barrels = 1;
             }};
 
@@ -618,6 +618,95 @@ public class schBlocks {
             targetGround = false;
             targetAir = true;
             shootSound = Vars.tree.loadSound("Turrets/AA-sg");
+
+            limitRange();
+        }};
+        GoryMKII = new ItemTurret("GoryMKII"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 30, Items.lead, 15, Items.graphite, 15, Items.titanium, 5));
+            ammo(
+                Items.copper, new FlakBulletType(12f, 15){{
+                    frontColor = Color.valueOf("FFD04D");
+                    backColor = Color.valueOf("863925")
+                    width = 5f;
+                    height = 15f;
+                    ammoMultiplier = 10f;
+                    lifetime = 60;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }},
+                Items.lead, new FlakBulletType(12f, 20){{
+                    frontColor = Color.valueOf("6F72FF");
+                    backColor = Color.valueOf("1B1D6E");
+                    width = 5f;
+                    height = 15f;
+                    splashDamageRadius = 36f;
+                    splashDamage = 36f * 1.5f;
+                    ammoMultiplier = 10f;
+                    lifetime = 60;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    fragBullets = 8;
+                    fragBullet = new BasicBulletType(3f, 24){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                    }};
+                    hitSound = Vars.tree.loadSound("Hits/LeadHit");
+                }},
+                Items.metaglass, new FlakBulletType(12f, 36){{
+                    frontColor = Color.valueOf("FFFFFF");
+                    backColor = Color.valueOf("606060");
+                    width = 2f;
+                    height = 9f;
+                    splashDamageRadius = 48f;
+                    splashDamage = 48f * 1.5f;
+                    ammoMultiplier = 10f;
+                    lifetime = 60;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    fragBullets = 12;
+                    fragBullet = new BasicBulletType(3f, 28){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                    }};
+                    hitSound = Vars.tree.loadSound("Hits/GlassHit");
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 1;
+                barrels = 3;
+                spread = 3.5f;
+            }};
+
+            size = 2;
+            shootY = 7f;
+            reload = 6f;
+            range = 360;
+            health = 250;
+            maxAmmo = 360
+            shootCone = 5f;
+            inaccuracy = 4f;
+            rotateSpeed = 18f;
+            coolant = consumeCoolant(0.1f);
+            targetGround = false;
+            targetAir = true;
+            shootSound = Vars.tree.loadSound("Turrets/AAmk2");
 
             limitRange();
         }};
