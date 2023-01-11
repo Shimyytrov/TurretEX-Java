@@ -23,6 +23,7 @@ public class schTechTree {
                         node(Kalinka, () -> {
                             node(Katyusha, () -> {
                                 node(KatyushaCHEAT);
+                                node(Satan);
                             });
                         });
                     });
