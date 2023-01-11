@@ -699,7 +699,7 @@ public class schBlocks {
             reload = 6f;
             range = 360;
             health = 250;
-            maxAmmo = 360
+            maxAmmo = 360;
             shootCone = 5f;
             inaccuracy = 4f;
             rotateSpeed = 18f;
