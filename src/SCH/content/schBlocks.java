@@ -626,7 +626,7 @@ public class schBlocks {
             ammo(
                 Items.copper, new FlakBulletType(12f, 15){{
                     frontColor = Color.valueOf("FFD04D");
-                    backColor = Color.valueOf("863925")
+                    backColor = Color.valueOf("863925");
                     width = 5f;
                     height = 15f;
                     ammoMultiplier = 10f;
