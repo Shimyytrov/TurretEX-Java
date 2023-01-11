@@ -607,7 +607,7 @@ public class schBlocks {
                 shotDelay = 4f;
             }};
 
-            size = 2;
+            size = 1;
             shootY = 7f;
             reload = 30f;
             range = 360;
