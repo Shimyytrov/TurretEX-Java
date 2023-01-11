@@ -27,6 +27,7 @@ public class schTechTree {
                             });
                         });
                     });
+                    node(GoryMKI);
                 });
             });
             node(flagPOL);
