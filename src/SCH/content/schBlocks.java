@@ -600,14 +600,18 @@ public class schBlocks {
                 }}
             );
 
-            shoot = new ShootAlternate(0f);
+            shoot = new ShootAlternate(){{
+                shots = 3;
+                shotDelay = 2f;
+            }};
 
             size = 1;
             shootY = 3f;
-            reload = 15f;
-            range = 255;
+            reload = 30f;
+            range = 256;
             health = 150;
-            inaccuracy = 7f;
+            shootCone = 5f;
+            inaccuracy = 2f;
             rotateSpeed = 25f;
             coolant = consumeCoolant(0.1f);
             targetGround = false;
