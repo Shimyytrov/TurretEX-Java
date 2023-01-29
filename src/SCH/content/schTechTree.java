@@ -37,6 +37,7 @@ public class schTechTree {
                 node(SteinkaMKI, () -> {
                     node(SteinkaMKII, () -> {
                         node(SteinkaMKIII);
+                    });
                 });
             });
         });
