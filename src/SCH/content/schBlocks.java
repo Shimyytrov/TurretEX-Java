@@ -713,7 +713,7 @@ public class schBlocks {
         SteinkaMKI = new ItemTurret("SteinkaMKI"){{
             requirements(Category.turret, ItemStack.with(Items.copper, 35, Items.lead, 15));
             ammo(
-                Items.copper, new BasicBulletType(12f, 30){{
+                Items.copper, new BasicBulletType(12f, 9){{
                     width = 2f;
                     height = 9f;
                     ammoMultiplier = 2f;
@@ -722,7 +722,7 @@ public class schBlocks {
                     smokeEffect = Fx.shootSmallSmoke;
                     hitSound = Vars.tree.loadSound("Hits/hitShotgun");
                 }},
-                Items.lead, new BasicBulletType(12f, 20){{
+                Items.lead, new BasicBulletType(12f, 12){{
                     width = 2f;
                     height = 9f;
                     ammoMultiplier = 2f;
@@ -731,7 +731,7 @@ public class schBlocks {
                     smokeEffect = Fx.shootSmallSmoke;
                     hitSound = Vars.tree.loadSound("Hits/hitShotgun");
                 }},
-                Items.metaglass, new BasicBulletType(12f, 36){{
+                Items.metaglass, new BasicBulletType(12f, 24){{
                     width = 2f;
                     height = 9f;
                     ammoMultiplier = 2f;
@@ -749,6 +749,7 @@ public class schBlocks {
                         frontColor = Color.white;
                         despawnEffect = Fx.none;
                         collidesGround = true;
+                        hitSound = Vars.tree.loadSound("Hits/GlassHit");
                     }};
                     hitSound = Vars.tree.loadSound("Hits/hitShotgun");
                 }}
@@ -756,23 +757,157 @@ public class schBlocks {
 
             shoot = new ShootAlternate(){{
                 shots = 12;
-                barrels = 3;
-                spread = 3.5f;
+                barrels = 1;
+                spread = 12f;
             }};
 
             size = 2;
             shootY = 7f;
-            reload = 6f;
-            range = 360;
-            health = 250;
+            reload = 45f;
+            range = 128;
+            health = 300;
             maxAmmo = 360;
             shootCone = 5f;
-            inaccuracy = 4f;
-            rotateSpeed = 18f;
-            coolant = consumeCoolant(0.1f);
-            targetGround = false;
-            targetAir = true;
+            inaccuracy = 1f;
+            rotateSpeed = 12f;
+            coolant = consumeCoolant(0.05f);
+            targetGround = true;
+            targetAir = false;
             shootSound = Vars.tree.loadSound("Turrets/SteinkaMKI");
+
+            limitRange();
+        }};
+        SteinkaMKII = new ItemTurret("SteinkaMKII"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 45, Items.lead, 20));
+            ammo(
+                Items.copper, new BasicBulletType(12f, 9){{
+                    width = 2f;
+                    height = 9f;
+                    ammoMultiplier = 2f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/hitShotgun");
+                }},
+                Items.lead, new BasicBulletType(12f, 12){{
+                    width = 2f;
+                    height = 9f;
+                    ammoMultiplier = 2f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/hitShotgun");
+                }},
+                Items.metaglass, new BasicBulletType(12f, 24){{
+                    width = 2f;
+                    height = 9f;
+                    ammoMultiplier = 2f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    fragBullets = 12;
+                    fragBullet = new BasicBulletType(3f, 28){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                        hitSound = Vars.tree.loadSound("Hits/GlassHit");
+                    }};
+                    hitSound = Vars.tree.loadSound("Hits/hitShotgun");
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 14;
+                barrels = 1;
+                spread = 12f;
+            }};
+
+            size = 2;
+            shootY = 7f;
+            reload = 30f;
+            range = 168;
+            health = 300;
+            maxAmmo = 360;
+            shootCone = 5f;
+            inaccuracy = 1f;
+            rotateSpeed = 12f;
+            coolant = consumeCoolant(0.05f);
+            targetGround = true;
+            targetAir = false;
+            shootSound = Vars.tree.loadSound("Turrets/SteinkaMKII");
+
+            limitRange();
+        }};
+        SteinkaMKIII = new ItemTurret("SteinkaMKIII"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 45, Items.lead, 20, Items.graphite, 5));
+            ammo(
+                Items.copper, new BasicBulletType(12f, 9){{
+                    width = 2f;
+                    height = 9f;
+                    ammoMultiplier = 2f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/hitShotgun");
+                }},
+                Items.lead, new BasicBulletType(12f, 12){{
+                    width = 2f;
+                    height = 9f;
+                    ammoMultiplier = 2f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/hitShotgun");
+                }},
+                Items.metaglass, new BasicBulletType(12f, 24){{
+                    width = 2f;
+                    height = 9f;
+                    ammoMultiplier = 2f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitEffect = Fx.flakExplosion;
+                    fragBullets = 12;
+                    fragBullet = new BasicBulletType(3f, 28){{
+                        width = 5f;
+                        height = 12f;
+                        shrinkY = 1f;
+                        lifetime = 20f;
+                        backColor = Pal.gray;
+                        frontColor = Color.white;
+                        despawnEffect = Fx.none;
+                        collidesGround = true;
+                        hitSound = Vars.tree.loadSound("Hits/GlassHit");
+                    }};
+                    hitSound = Vars.tree.loadSound("Hits/hitShotgun");
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 16;
+                barrels = 1;
+                spread = 16f;
+            }};
+
+            size = 2;
+            shootY = 7f;
+            reload = 24f;
+            range = 192;
+            health = 300;
+            maxAmmo = 360;
+            shootCone = 5f;
+            inaccuracy = 1f;
+            rotateSpeed = 12f;
+            coolant = consumeCoolant(0.05f);
+            targetGround = true;
+            targetAir = false;
+            shootSound = Vars.tree.loadSound("Turrets/SteinkaMKIII");
 
             limitRange();
         }};

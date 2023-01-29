@@ -27,7 +27,14 @@ public class schTechTree {
                             });
                         });
                     });
-                    node(GoryMKI);
+                    node(GoryMKI, () -> {
+                        node(GoryMKII);
+                    });
+                    node(SteinkaMKI, () -> {
+                        node(SteinkaMKII, () -> {
+                            node(SteinkaMKIII);
+                        });
+                    });
                 });
             });
             node(flagPOL);
