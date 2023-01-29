@@ -989,5 +989,75 @@ public class schBlocks {
             targetAir = true;
             shootSound = Vars.tree.loadSound("Turrets/PolskiLaser");
         }};
+        Rozpierducha = new ItemTurret("Rozpierducha"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 256, Items.lead, 64, Items.graphite, 128, Items.titanium, 32, Items.thorium, 16));
+            ammo(
+                Items.copper, new BasicBulletType(12f, 36){{
+                    frontColor = Color.valueOf("FFD04D");
+                    backColor = Color.valueOf("863925");
+                    width = 4f;
+                    height = 18f;
+                    ammoMultiplier = 5f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }},
+                Items.lead, new BasicBulletType(12f, 60){{
+                    frontColor = Color.valueOf("6F72FF");
+                    backColor = Color.valueOf("1B1D6E");
+                    width = 4f;
+                    height = 18f;
+                    ammoMultiplier = 5f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/LeadHit");
+                }},
+                Items.titanium, new BasicBulletType(12f, 128){{
+                    frontColor = Color.valueOf("00e4ff");
+                    backColor = Color.valueOf("005963");
+                    width = 6f;
+                    height = 18f;
+                    ammoMultiplier = 5f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }},
+                Items.thorium, new BasicBulletType(12f, 192){{
+                    frontColor = Color.valueOf("e400ff");
+                    backColor = Color.valueOf("640070");
+                    width = 8f;
+                    height = 20f;
+                    ammoMultiplier = 5f;
+                    lifetime = 160;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = Fx.shootSmallSmoke;
+                    hitSound = Vars.tree.loadSound("Hits/MetalHitRL");
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 1;
+                barrels = 2;
+                spread = 5f;
+            }};
+
+            size = 3;
+            reload = 5f;
+            range = 296;
+            health = 600;
+            maxAmmo = 360;
+            shootCone = 5f;
+            inaccuracy = 2f;
+            rotateSpeed = 12f;
+            coolant = consumeCoolant(0.3f);
+            targetGround = true;
+            targetAir = true;
+            shootSound = Vars.tree.loadSound("Turrets/PolskiMG");
+
+            limitRange();
+        }};
     };
-}; 
+};

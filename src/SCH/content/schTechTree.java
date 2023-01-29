@@ -32,7 +32,12 @@ public class schTechTree {
                     });
                 });
             });
-            node(flagPOL);
+            node(flagPOL, () -> {
+                node(Niedzwiedz, () -> {
+                    node(NiedzwiedzA2);
+                    node(Rozpierducha);
+                });
+            });
             node(flagDEU, () -> {
                 node(SteinkaMKI, () -> {
                     node(SteinkaMKII, () -> {
