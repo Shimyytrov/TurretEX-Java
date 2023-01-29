@@ -911,5 +911,86 @@ public class schBlocks {
 
             limitRange();
         }};
+        Niedzwiedz = new ItemTurret("Niedzwiedz"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 255, Items.lead, 55, Items.graphite, 100, Items.titanium, 35));
+            range = 128;
+            float brange = range + 10f;
+            ammo(
+                Items.titanium, new ShrapnelBulletType(){{
+                    length = brange;
+                    damage = 150f;
+                    ammoMultiplier = 4f;
+                    width = 17f;
+                    reloadMultiplier = 1.5f;
+                }},
+                Items.thorium, new ShrapnelBulletType(){{
+                    length = brange;
+                    damage = 325f;
+                    ammoMultiplier = 5f;
+                    toColor = Pal.thoriumPink;
+                    shootEffect = smokeEffect = Fx.thoriumShoot;
+                }}
+            );
+
+            shoot = new ShootSpread(3, 20f);
+
+            size = 3;
+            reload = 35f;
+            shake = 4f;
+            
+            recoil = 5f;
+            scaledHealth = 250;
+            shootCone = 30f;
+            rotateSpeed = 12f;
+            coolant = consumeCoolant(0.1f);
+            targetGround = true;
+            targetAir = true;
+            shootSound = Vars.tree.loadSound("Turrets/PolskiLaser");
+
+            limitRange();
+        }};
+        NiedzwiedzA2 = new ItemTurret("NiedzwiedzA2"){{
+            requirements(Category.turret, ItemStack.with(Items.copper, 255, Items.lead, 55, Items.graphite, 100, Items.titanium, 35));
+            range = 256;
+            float brange = range + 10f;
+            ammo(
+                Items.titanium, new ShrapnelBulletType(){{
+                    length = brange;
+                    damage = 256f;
+                    ammoMultiplier = 4f;
+                    width = 17f;
+                    reloadMultiplier = 1.5f;
+                }},
+                Items.thorium, new ShrapnelBulletType(){{
+                    length = brange;
+                    damage = 512f;
+                    ammoMultiplier = 5f;
+                    toColor = Pal.thoriumPink;
+                    shootEffect = smokeEffect = Fx.thoriumShoot;
+                }}
+            );
+
+            shoot = new ShootAlternate(){{
+                shots = 3;
+                barrels = 1;
+                spread = 4f;
+                shotDelay = 5f;
+            }};
+
+            size = 3;
+            reload = 30f;
+            shake = 4f;
+            
+            recoil = 5f;
+            scaledHealth = 250;
+            shootCone = 30f;
+            rotateSpeed = 12f;
+            coolant = consumeCoolant(0.1f);
+            targetGround = true;
+            targetAir = true;
+            shootSound = Vars.tree.loadSound("Turrets/PolskiLaser");
+
+            limitRange();
+        }};
     };
 }; 
