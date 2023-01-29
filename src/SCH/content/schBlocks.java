@@ -946,10 +946,8 @@ public class schBlocks {
             targetGround = true;
             targetAir = true;
             shootSound = Vars.tree.loadSound("Turrets/PolskiLaser");
-
-            limitRange();
         }};
-        NiedzwiedzA2 = new ItemTurret("NiedzwiedzA2"){{
+        NiedzwiedzA2 = new ItemTurret("Niedzwiedz_A2"){{
             requirements(Category.turret, ItemStack.with(Items.copper, 255, Items.lead, 55, Items.graphite, 100, Items.titanium, 35));
             range = 256;
             float brange = range + 10f;
@@ -989,8 +987,6 @@ public class schBlocks {
             targetGround = true;
             targetAir = true;
             shootSound = Vars.tree.loadSound("Turrets/PolskiLaser");
-
-            limitRange();
         }};
     };
 }; 
