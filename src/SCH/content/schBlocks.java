@@ -972,17 +972,18 @@ public class schBlocks {
                 shots = 3;
                 barrels = 1;
                 spread = 4f;
-                shotDelay = 5f;
+                shotDelay = 4f;
             }};
 
             size = 3;
-            reload = 30f;
+            reload = 60f;
             shake = 4f;
             
             recoil = 5f;
             scaledHealth = 250;
             shootCone = 30f;
             rotateSpeed = 12f;
+            inaccuracy = 8f;
             coolant = consumeCoolant(0.1f);
             targetGround = true;
             targetAir = true;
