@@ -772,7 +772,7 @@ public class schBlocks {
             coolant = consumeCoolant(0.1f);
             targetGround = false;
             targetAir = true;
-            shootSound = Vars.tree.loadSound("Turrets/AAmk2");
+            shootSound = Vars.tree.loadSound("Turrets/SteinkaMKI");
 
             limitRange();
         }};
