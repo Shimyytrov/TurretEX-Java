@@ -30,15 +30,15 @@ public class schTechTree {
                     node(GoryMKI, () -> {
                         node(GoryMKII);
                     });
-                    node(SteinkaMKI, () -> {
-                        node(SteinkaMKII, () -> {
-                            node(SteinkaMKIII);
-                        });
-                    });
                 });
             });
             node(flagPOL);
-            node(flagDEU);
+            node(flagDEU, () -> {
+                node(SteinkaMKI, () -> {
+                    node(SteinkaMKII, () -> {
+                        node(SteinkaMKIII);
+                });
+            });
         });
     };
 }

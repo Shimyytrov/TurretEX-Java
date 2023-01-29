@@ -768,7 +768,7 @@ public class schBlocks {
             health = 300;
             maxAmmo = 360;
             shootCone = 5f;
-            inaccuracy = 1f;
+            inaccuracy = 12f;
             rotateSpeed = 12f;
             coolant = consumeCoolant(0.05f);
             targetGround = true;
@@ -835,7 +835,7 @@ public class schBlocks {
             health = 300;
             maxAmmo = 360;
             shootCone = 5f;
-            inaccuracy = 1f;
+            inaccuracy = 14f;
             rotateSpeed = 12f;
             coolant = consumeCoolant(0.05f);
             targetGround = true;
@@ -902,7 +902,7 @@ public class schBlocks {
             health = 300;
             maxAmmo = 360;
             shootCone = 5f;
-            inaccuracy = 1f;
+            inaccuracy = 16f;
             rotateSpeed = 12f;
             coolant = consumeCoolant(0.05f);
             targetGround = true;
