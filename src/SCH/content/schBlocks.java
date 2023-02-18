@@ -1069,8 +1069,7 @@ public class schBlocks {
         schAirFactory = new UnitFactory("schAirFactory"){{
             requirements(Category.units, with(Items.copper, 50, Items.lead, 35));
             plans = Seq.with(
-                new UnitPlan(schUnitTypes.RukhtuskaMKI, 60f * 10, with(Items.lead, 30, Items.graphite, 15)),
-                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 9, with(Items.silicon, 10, Items.graphite, 5))
+                new UnitPlan(schUnitTypes.RukhtuskaMKI, 60f * 10, with(Items.lead, 30, Items.graphite, 15))
             );
             size = 3;
             consumePower(1.5f);

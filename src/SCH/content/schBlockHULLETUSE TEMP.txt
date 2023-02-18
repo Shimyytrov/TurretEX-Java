@@ -1,0 +1,1 @@
+                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 9, with(Items.silicon, 10, Items.graphite, 5))
