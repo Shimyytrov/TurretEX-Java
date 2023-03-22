@@ -36,43 +36,41 @@ public class schUnitTypes {
 
     public static void load(){
         RukhtuskaMKI = new UnitType("RukhtuskaMKI"){{
-                constructor = UnitEntity::create;
-                speed = 4f;
-                accel = 0.05f;
-                drag = 0.02f;
-                flying = true;
-                health = 360f;
-                engineOffset = 6f;
-                hitSize = 9f;
-                itemCapacity = 50;
-                targetAir = true;
-                targetGround = true;
-                faceTarget = true;
-                circleTarget = true;
-                weapons.add(new Weapon("RukhtustiskayaGewehrMKI"){{
-                    y = 0;
-                    x = 0;
-                    mirror = false;
-                    rotate = false;
-                    reload = 6;
-                    recoil = 2;
-                    ejectEffect = casing2;
-                    shake = 2;
-                    bullet = new BasicBulletType(12f, 24){{
-                        width = 5f;
-                        height = 24f;
-                        lifetime = 15f;
-                        shootEffect = Fx.shootSmall;
-                        smokeEffect = shootSmallSmoke;
-                        ammoMultiplier = 2;
-                        frontColor = Color.valueOf("ff00ff");
-                        backColor = Color.valueOf("52239f");
-                        lightColor = Color.valueOf("ff0000");
-                    }};
-                    shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
-                }});
-
-            EntityMapping.nameMap.put(name, constructor);
+            speed = 4f;
+            accel = 0.05f;
+            drag = 0.02f;
+            flying = true;
+            health = 360f;
+            engineOffset = 6f;
+            hitSize = 9f;
+            itemCapacity = 50;
+            targetAir = true;
+            targetGround = true;
+            faceTarget = true;
+            circleTarget = true;
+            weapons.add(new Weapon("RukhtustiskayaGewehrMKI"){{
+                y = 0;
+                x = 0;
+                mirror = false;
+                rotate = false;
+                reload = 6;
+                recoil = 2;
+                ejectEffect = casing2;
+                shake = 2;
+                bullet = new BasicBulletType(12f, 24){{
+                    width = 5f;
+                    height = 24f;
+                    lifetime = 15f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = shootSmallSmoke;
+                    ammoMultiplier = 2;
+                    frontColor = Color.valueOf("ff00ff");
+                    backColor = Color.valueOf("52239f");
+                    lightColor = Color.valueOf("ff0000");
+                }};
+                shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
+            }});
+            constructor = UnitEntity::create;
         }};
     }
 };

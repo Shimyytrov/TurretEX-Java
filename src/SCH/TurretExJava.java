@@ -1,5 +1,6 @@
 package SCH;
 
+import SCH.content.schUnitTypes;
 import SCH.content.schBlocks;
 import SCH.content.schTechTree;
 import mindustry.mod.Mod;
@@ -10,6 +11,7 @@ public class TurretExJava extends Mod{
 
     @Override
     public void loadContent(){
+        schUnitTypes.load();
         schBlocks.load();
         schTechTree.load();
     }
