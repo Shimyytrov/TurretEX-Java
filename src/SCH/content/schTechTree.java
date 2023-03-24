@@ -8,6 +8,7 @@ import mindustry.type.ItemStack;
 
 import static mindustry.content.Blocks.*;
 import static SCH.content.schBlocks.*;
+import static SCH.content.schUnitTypes.*;
 import static mindustry.content.TechTree.*;
 import static mindustry.content.UnitTypes.*;
 
@@ -43,6 +44,12 @@ public class schTechTree {
                     node(SteinkaMKII, () -> {
                         node(SteinkaMKIII);
                     });
+                });
+            });
+            node(schAirFactory);
+            node(RukhtuskaMKI, () -> {
+                node(RukhtuskaMKII, () -> {
+                    node(RukhtuskaMKIII);
                 });
             });
         });
