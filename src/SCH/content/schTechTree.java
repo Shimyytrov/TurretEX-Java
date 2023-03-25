@@ -47,6 +47,9 @@ public class schTechTree {
                 });
             });
             node(schAirFactory);
+            node(t2Reconstructor, () -> {
+                node(t3Reconstructor);
+            });
             node(RukhtuskaMKI, () -> {
                 node(RukhtuskaMKII, () -> {
                     node(RukhtuskaMKIII);

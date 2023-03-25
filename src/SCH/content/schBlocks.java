@@ -1076,5 +1076,33 @@ public class schBlocks {
             ambientSound = Vars.tree.loadSound("Factory/schAirFactory");
             health = 500;
         }};
+        t2Reconstructor = new Reconstructor("t2Reconstructor"){{
+            requirements(Category.units, with(Items.copper, 50, Items.lead, 35, Items.silicon, 15));
+
+            size = 3;
+            consumePower(1f);
+            consumeItems(with(Items.titanium, 15));
+            health = 500;
+            ambientSound = Vars.tree.loadSound("Factory/schAirFactory");
+            constructTime = 60f * 10f;
+
+            upgrades.addAll(
+                new UnitType[]{schUnitTypes.RukhtuskaMKI, schUnitTypes.RukhtuskaMKII}
+            );
+        }};
+        t3Reconstructor = new Reconstructor("t3Reconstructor"){{
+            requirements(Category.units, with(Items.copper, 50, Items.lead, 35, Items.silicon, 20));
+
+            size = 3;
+            consumePower(1f);
+            consumeItems(with(Items.titanium, 25));
+            health = 500;
+            ambientSound = Vars.tree.loadSound("Factory/schAirFactory");
+            constructTime = 60f * 10f;
+
+            upgrades.addAll(
+                new UnitType[]{schUnitTypes.RukhtuskaMKII, schUnitTypes.RukhtuskaMKIII}
+            );
+        }};
     };
 };
