@@ -62,7 +62,10 @@ public class schBlocks {
     schAirFactory,
 
     /* Reconstructors */
-    t2Reconstructor, t3Reconstructor
+    t2Reconstructor, t3Reconstructor,
+
+    /* Generators */
+    coalBurner, steamTurbine
     ;
 
     public static void load() {
@@ -1069,7 +1072,8 @@ public class schBlocks {
         schAirFactory = new UnitFactory("schAirFactory"){{
             requirements(Category.units, with(Items.copper, 50, Items.lead, 35));
             plans = Seq.with(
-                new UnitPlan(schUnitTypes.RukhtuskaMKI, 60f * 10, with(Items.lead, 30, Items.graphite, 15))
+                new UnitPlan(schUnitTypes.RukhtuskaMKI, 60f * 10, with(Items.lead, 30, Items.graphite, 15)),
+                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 9, with(Items.silicon, 10, Items.graphite, 5))
             );
             size = 3;
             consumePower(1.5f);
@@ -1087,7 +1091,8 @@ public class schBlocks {
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                new UnitType[]{schUnitTypes.RukhtuskaMKI, schUnitTypes.RukhtuskaMKII}
+                new UnitType[]{schUnitTypes.RukhtuskaMKI, schUnitTypes.RukhtuskaMKII},
+                new UnitType[]{schUnitTypes.HulletuseMKI, schUnitTypes.HulletuseMKII}
             );
         }};
         t3Reconstructor = new Reconstructor("t3Reconstructor"){{
@@ -1103,6 +1108,45 @@ public class schBlocks {
             upgrades.addAll(
                 new UnitType[]{schUnitTypes.RukhtuskaMKII, schUnitTypes.RukhtuskaMKIII}
             );
+        }};
+        coalBurner = new ConsumeGenerator("coalBurner"){{
+            requirements(Category.power, with(Items.copper, 30, Items.lead, 15, Items.graphite, 5));
+            size = 2;
+            itemDuration = 240f;
+            hasLiquids = false;
+            powerProduction = 1.5f;
+            warmupSpeed = 0.005f;
+            drawer = new DrawMulti(
+                new DrawDefault(),
+                new DrawWarmupRegion(),
+                new DrawRegion("-rot"){{
+                    rotateSpeed = 8f;
+                }},
+                new DrawRegion("-rot"){{
+                    rotateSpeed = -8f;
+                    rotation = 45f;
+                }},
+                new DrawRegion("-cap")
+                );
+            consume(new ConsumeItemFlammable());
+            consume(new ConsumeItemExplode());
+            ambientSound = Vars.tree.loadSound("Power/coalBurner");
+            ambientSoundVolume = 0.1f;
+        }};
+        steamTurbine = new ConsumeGenerator("steamTurbine"){{
+            requirements(Category.power, with(Items.copper, 40, Items.lead, 25, Items.graphite, 10));
+            size = 3;
+            itemDuration = 300f;
+            hasLiquids = true;
+            liquidCapacity = 180;
+            powerProduction = 6.15f;
+            warmupSpeed = 0.005f;
+            drawer = new DrawMulti(new DrawDefault(), new DrawBlurSpin("-fan", 120f), new DrawRegion("-top"));
+            consume(new ConsumeItemFlammable());
+            consume(new ConsumeItemExplode());
+            consumeLiquid(Liquids.water, 0.1f);
+            ambientSound = Vars.tree.loadSound("Power/steamTurbine");
+            ambientSoundVolume = 1f;
         }};
     };
 };
