@@ -288,7 +288,7 @@ public class schUnitTypes {
             buildSpeed = 5f;
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
-            weapons.add(new Weapon("Hulle-gun"){{
+            weapons.add(new Weapon("turretEX-java-Hulle-gun"){{
                 y = -5;
                 x = 5;
                 mirror = true;
@@ -311,7 +311,7 @@ public class schUnitTypes {
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
             }});
-            weapons.add(new Weapon("Hulle-missile"){{
+            weapons.add(new Weapon("turretEX-java-Hulle-missile"){{
                 y = 4;
                 x = 5;
                 mirror = true;
@@ -320,7 +320,7 @@ public class schUnitTypes {
                 recoil = 2;
                 ejectEffect = casing2;
                 shake = 2;
-                bullet = new BasicBulletType(5f, 33){{
+                bullet = new MissileBulletType(5f, 33){{
                     width = 6f;
                     height = 12f;
                     lifetime = 60f;
@@ -335,6 +335,8 @@ public class schUnitTypes {
                     splashDamageRadius = 36f;
                     splashDamage = 48f;
                     collidesTeam = false;
+                    hitEffect = Fx.blastExplosion;
+                    despawnEffect = Fx.blastExplosion;
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/laser");
             }});
@@ -364,55 +366,121 @@ public class schUnitTypes {
             buildRange = 360f;
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
-            weapons.add(new Weapon("Hulle-gun"){{
-                y = -5;
-                x = 5;
+
+            BulletType basic = new BasicBulletType(5f, 36){{
+                width = 6f;
+                height = 16f;
+                lifetime = 60f;
+                shootEffect = Fx.shootSmall;
+                smokeEffect = shootSmallSmoke;
+                ammoMultiplier = 2;
+                frontColor = Color.valueOf("ffffff");
+                backColor = Color.valueOf("11ff11");
+                lightColor = Color.valueOf("00ff00");
+                collidesTeam = false;
+            }};
+            BulletType minigun = new BasicBulletType(8f, 12){{
+                width = 6f;
+                height = 18f;
+                lifetime = 45f;
+                shootEffect = Fx.shootSmall;
+                smokeEffect = shootSmallSmoke;
+                ammoMultiplier = 5;
+                frontColor = Color.valueOf("ffffff");
+                backColor = Color.valueOf("ff0000");
+                lightColor = Color.valueOf("ff0000");
+                collidesTeam = false;
+            }};
+            BulletType missiles = new MissileBulletType(5f, 33){{
+                width = 6f;
+                height = 12f;
+                lifetime = 60f;
+                shootEffect = Fx.shootSmall;
+                smokeEffect = shootSmallSmoke;
+                ammoMultiplier = 2;
+                frontColor = Color.valueOf("ffffff");
+                backColor = Color.valueOf("cc11ff");
+                lightColor = Color.valueOf("0000ff");
+                homingRange = 80f;
+                homingPower = 0.5f;
+                splashDamageRadius = 36f;
+                splashDamage = 48f;
+                collidesTeam = false;
+                hitEffect = Fx.blastExplosion;
+                despawnEffect = Fx.blastExplosion;
+            }};
+
+            weapons.add(new Weapon("turretEX-java-Hulle-gun"){{
+                y = -12f;
+                x = 8f;
                 mirror = true;
                 rotate = true;
-                reload = 5;
+                reload = 15;
                 recoil = 2;
-                ejectEffect = casing2;
+                ejectEffect = casing1;
                 shake = 2;
-                bullet = new BasicBulletType(5f, 36){{
-                    width = 11f;
-                    height = 12f;
-                    lifetime = 45f;
-                    shootEffect = Fx.shootSmall;
-                    smokeEffect = shootSmallSmoke;
-                    ammoMultiplier = 2;
-                    frontColor = Color.valueOf("ffffff");
-                    backColor = Color.valueOf("11ff11");
-                    lightColor = Color.valueOf("00ff00");
-                    collidesTeam = false;
-                }};
-                shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
+                bullet = basic;
+                shootSound = Vars.tree.loadSound("Turrets/AA-sg");
             }});
-            weapons.add(new Weapon("Hulle-missile"){{
+            weapons.add(new Weapon("turretEX-java-Hulle-gun"){{
+                y = 12f;
+                x = 8f;
+                mirror = true;
+                rotate = true;
+                reload = 15;
+                recoil = 2;
+                ejectEffect = casing1;
+                shake = 2;
+                bullet = basic;
+                shootSound = Vars.tree.loadSound("Turrets/AA-sg");
+            }});
+            weapons.add(new Weapon("turretEX-java-Hulle-gun"){{
+                y = 0f;
+                x = 12f;
+                mirror = true;
+                rotate = true;
+                reload = 2;
+                recoil = 2;
+                ejectEffect = casing1;
+                shake = 2;
+                bullet = minigun;
+                shootSound = Vars.tree.loadSound("Turrets/AA-sg");
+            }});
+            weapons.add(new Weapon("turretEX-java-Hulle-missile"){{
                 y = 4;
-                x = 5;
+                x = 4;
                 mirror = true;
                 rotate = true;
                 reload = 30;
                 recoil = 2;
                 ejectEffect = casing2;
                 shake = 2;
-                bullet = new BasicBulletType(5f, 33){{
-                    width = 6f;
-                    height = 12f;
-                    lifetime = 60f;
-                    shootEffect = Fx.shootSmall;
-                    smokeEffect = shootSmallSmoke;
-                    ammoMultiplier = 2;
-                    frontColor = Color.valueOf("ffffff");
-                    backColor = Color.valueOf("cc11ff");
-                    lightColor = Color.valueOf("0000ff");
-                    homingRange = 80f;
-                    homingPower = 0.5f;
-                    splashDamageRadius = 36f;
-                    splashDamage = 48f;
-                    collidesTeam = false;
-                }};
-                shootSound = Vars.tree.loadSound("Turrets/laser");
+                bullet = missiles;
+                shootSound = Vars.tree.loadSound("Turrets/SteinMKIII");
+            }});
+            weapons.add(new Weapon("turretEX-java-Hulle-missile"){{
+                y = -4;
+                x = 4;
+                mirror = true;
+                rotate = true;
+                reload = 30;
+                recoil = 2;
+                ejectEffect = casing2;
+                shake = 2;
+                bullet = missiles;
+                shootSound = Vars.tree.loadSound("Turrets/SteinMKI");
+            }});
+            weapons.add(new Weapon("turretEX-java-Hulle-missile"){{
+                y = 0;
+                x = 6;
+                mirror = true;
+                rotate = true;
+                reload = 20;
+                recoil = 2;
+                ejectEffect = casing2;
+                shake = 2;
+                bullet = missiles;
+                shootSound = Vars.tree.loadSound("Turrets/SteinMKII");
             }});
             constructor = UnitEntity::create;
         }};

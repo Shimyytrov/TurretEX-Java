@@ -1100,13 +1100,14 @@ public class schBlocks {
 
             size = 3;
             consumePower(1f);
-            consumeItems(with(Items.titanium, 25));
+            consumeItems(with(Items.titanium, 50, Items.silicon, 25, Items.graphite, 10));
             health = 500;
             ambientSound = Vars.tree.loadSound("Factory/schAirFactory");
             constructTime = 60f * 10f;
 
             upgrades.addAll(
-                new UnitType[]{schUnitTypes.RukhtuskaMKII, schUnitTypes.RukhtuskaMKIII}
+                new UnitType[]{schUnitTypes.RukhtuskaMKII, schUnitTypes.RukhtuskaMKIII},
+                new UnitType[]{schUnitTypes.HulletuseMKII, schUnitTypes.HulletuseMKIII}
             );
         }};
         coalBurner = new ConsumeGenerator("coalBurner"){{
