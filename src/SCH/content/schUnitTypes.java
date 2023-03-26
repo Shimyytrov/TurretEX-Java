@@ -89,7 +89,6 @@ public class schUnitTypes {
             circleTarget = true;
             rotateToBuilding = true;
             buildSpeed = 2f;
-            buildRange = 256f;
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.generator, BlockFlag.turret, null};
             weapons.add(new Weapon("RukhtustiskayaGewehrMKII"){{
@@ -152,7 +151,6 @@ public class schUnitTypes {
             circleTarget = true;
             rotateToBuilding = false;
             buildSpeed = 2.5f;
-            buildRange = 360f;
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.turret, BlockFlag.core, null};
             weapons.add(new Weapon("RukhtustiskayaGewehrMKIII"){{
@@ -363,7 +361,6 @@ public class schUnitTypes {
             circleTarget = false;
             rotateToBuilding = false;
             buildSpeed = 4f;
-            buildRange = 360f;
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
 
