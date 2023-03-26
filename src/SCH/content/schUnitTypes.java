@@ -31,7 +31,7 @@ import static mindustry.Vars.*;
 import static mindustry.content.Fx.*;
 
 public class schUnitTypes {
-    public static UnitType RukhtuskaMKI, RukhtuskaMKII, RukhtuskaMKIII, HulletuseMKI, HulletuseMKII;
+    public static UnitType RukhtuskaMKI, RukhtuskaMKII, RukhtuskaMKIII, HulletuseMKI, HulletuseMKII, HulletuseMKIII;
 
     public static void load(){
         RukhtuskaMKI = new UnitType("RukhtuskaMKI"){{
@@ -47,6 +47,7 @@ public class schUnitTypes {
             targetGround = true;
             faceTarget = true;
             circleTarget = true;
+            targetFlags = new BlockFlag[]{BlockFlag.generator, BlockFlag.drill, null};
             weapons.add(new Weapon("RukhtustiskayaGewehrMKI"){{
                 y = 0;
                 x = 0;
@@ -90,6 +91,7 @@ public class schUnitTypes {
             buildSpeed = 2f;
             buildRange = 256f;
             defaultCommand = UnitCommand.rebuildCommand;
+            targetFlags = new BlockFlag[]{BlockFlag.generator, BlockFlag.turret, null};
             weapons.add(new Weapon("RukhtustiskayaGewehrMKII"){{
                 y = 0;
                 x = 4;
@@ -152,6 +154,7 @@ public class schUnitTypes {
             buildSpeed = 2.5f;
             buildRange = 360f;
             defaultCommand = UnitCommand.rebuildCommand;
+            targetFlags = new BlockFlag[]{BlockFlag.turret, BlockFlag.core, null};
             weapons.add(new Weapon("RukhtustiskayaGewehrMKIII"){{
                 y = 0;
                 x = 4;
@@ -284,6 +287,83 @@ public class schUnitTypes {
             rotateToBuilding = false;
             buildSpeed = 5f;
             defaultCommand = UnitCommand.rebuildCommand;
+            targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
+            weapons.add(new Weapon("Hulle-gun"){{
+                y = -5;
+                x = 5;
+                mirror = true;
+                rotate = true;
+                reload = 5;
+                recoil = 2;
+                ejectEffect = casing2;
+                shake = 2;
+                bullet = new BasicBulletType(5f, 36){{
+                    width = 11f;
+                    height = 12f;
+                    lifetime = 45f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = shootSmallSmoke;
+                    ammoMultiplier = 2;
+                    frontColor = Color.valueOf("ffffff");
+                    backColor = Color.valueOf("11ff11");
+                    lightColor = Color.valueOf("00ff00");
+                    collidesTeam = false;
+                }};
+                shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
+            }});
+            weapons.add(new Weapon("Hulle-missile"){{
+                y = 4;
+                x = 5;
+                mirror = true;
+                rotate = true;
+                reload = 30;
+                recoil = 2;
+                ejectEffect = casing2;
+                shake = 2;
+                bullet = new BasicBulletType(5f, 33){{
+                    width = 6f;
+                    height = 12f;
+                    lifetime = 60f;
+                    shootEffect = Fx.shootSmall;
+                    smokeEffect = shootSmallSmoke;
+                    ammoMultiplier = 2;
+                    frontColor = Color.valueOf("ffffff");
+                    backColor = Color.valueOf("cc11ff");
+                    lightColor = Color.valueOf("0000ff");
+                    homingRange = 80f;
+                    homingPower = 0.5f;
+                    splashDamageRadius = 36f;
+                    splashDamage = 48f;
+                    collidesTeam = false;
+                }};
+                shootSound = Vars.tree.loadSound("Turrets/laser");
+            }});
+            constructor = UnitEntity::create;
+        }};
+        HulletuseMKIII = new UnitType("HulletuseMKIII"){{
+            speed = 1f;
+            rotateSpeed = 1.9f;
+            mineTier = 5;
+            mineSpeed = 5f;
+            accel = 0.04f;
+            drag = 0.04f;
+            flying = true;
+            lowAltitude = true;
+            health = 7200;
+            armor = 12f;
+            engineOffset = 21;
+            engineSize = 5.3f;
+            hitSize = 46f;
+            itemCapacity = 70;
+            targetAir = true;
+            targetGround = true;
+            faceTarget = false;
+            circleTarget = false;
+            rotateToBuilding = false;
+            buildSpeed = 4f;
+            buildRange = 360f;
+            defaultCommand = UnitCommand.rebuildCommand;
+            targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
             weapons.add(new Weapon("Hulle-gun"){{
                 y = -5;
                 x = 5;
