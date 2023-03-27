@@ -286,7 +286,7 @@ public class schUnitTypes {
             buildSpeed = 5f;
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
-            weapons.add(new Weapon("turretEX-java-hulle-gun"){{
+            weapons.add(new Weapon("turretex-java-hulle-gun"){{
                 y = -5;
                 x = 5;
                 mirror = true;
@@ -309,7 +309,7 @@ public class schUnitTypes {
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
             }});
-            weapons.add(new Weapon("turretEX-java-hulle-missile"){{
+            weapons.add(new Weapon("turretex-java-hulle-missile"){{
                 y = 4;
                 x = 5;
                 mirror = true;
@@ -407,7 +407,7 @@ public class schUnitTypes {
                 despawnEffect = Fx.blastExplosion;
             }};
 
-            weapons.add(new Weapon("turretEX-java-hulle-gun"){{
+            weapons.add(new Weapon("turretex-java-hulle-gun"){{
                 y = -12f;
                 x = 8f;
                 mirror = true;
@@ -419,7 +419,7 @@ public class schUnitTypes {
                 bullet = basic;
                 shootSound = Vars.tree.loadSound("Turrets/AA-sg");
             }});
-            weapons.add(new Weapon("turretEX-java-hulle-gun"){{
+            weapons.add(new Weapon("turretex-java-hulle-gun"){{
                 y = 12f;
                 x = 8f;
                 mirror = true;
@@ -431,7 +431,7 @@ public class schUnitTypes {
                 bullet = basic;
                 shootSound = Vars.tree.loadSound("Turrets/AA-sg");
             }});
-            weapons.add(new Weapon("turretEX-java-hulle-gun"){{
+            weapons.add(new Weapon("turretex-java-hulle-gun"){{
                 y = 0f;
                 x = 12f;
                 mirror = true;
@@ -443,7 +443,7 @@ public class schUnitTypes {
                 bullet = minigun;
                 shootSound = Vars.tree.loadSound("Turrets/AA-sg");
             }});
-            weapons.add(new Weapon("turretEX-java-hulle-missile"){{
+            weapons.add(new Weapon("turretex-java-hulle-missile"){{
                 y = 4;
                 x = 4;
                 mirror = true;
@@ -455,7 +455,7 @@ public class schUnitTypes {
                 bullet = missiles;
                 shootSound = Vars.tree.loadSound("Turrets/SteinMKIII");
             }});
-            weapons.add(new Weapon("turretEX-java-hulle-missile"){{
+            weapons.add(new Weapon("turretex-java-hulle-missile"){{
                 y = -4;
                 x = 4;
                 mirror = true;
@@ -467,7 +467,7 @@ public class schUnitTypes {
                 bullet = missiles;
                 shootSound = Vars.tree.loadSound("Turrets/SteinMKI");
             }});
-            weapons.add(new Weapon("turretEX-java-hulle-missile"){{
+            weapons.add(new Weapon("turretex-java-hulle-missile"){{
                 y = 0;
                 x = 6;
                 mirror = true;
