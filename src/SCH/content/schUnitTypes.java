@@ -364,7 +364,7 @@ public class schUnitTypes {
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
 
-            BulletType basic = new BasicBulletType(5f, 36){{
+            BulletType basic = new BasicBulletType(5f, 16){{
                 width = 6f;
                 height = 16f;
                 lifetime = 60f;
@@ -376,7 +376,7 @@ public class schUnitTypes {
                 lightColor = Color.valueOf("00ff00");
                 collidesTeam = false;
             }};
-            BulletType minigun = new BasicBulletType(8f, 12){{
+            BulletType minigun = new BasicBulletType(8f, 4){{
                 width = 6f;
                 height = 18f;
                 lifetime = 45f;
@@ -401,7 +401,7 @@ public class schUnitTypes {
                 homingRange = 80f;
                 homingPower = 0.5f;
                 splashDamageRadius = 36f;
-                splashDamage = 48f;
+                splashDamage = 12f;
                 collidesTeam = false;
                 hitEffect = Fx.blastExplosion;
                 despawnEffect = Fx.blastExplosion;
