@@ -1,3 +1,0 @@
-                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 9, with(Items.silicon, 10, Items.graphite, 5))
-                constructor = UnitEntity::create;
-            EntityMapping.nameMap.put(name, constructor);

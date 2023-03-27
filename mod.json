@@ -2,8 +2,8 @@
 "name": "turretEX-java",
 "displayName": "Turret Expansion Java",
 "author": "Shimyytrov Modding Team",
-"description": "v1.4.2:0001 Java",
-"version": "1.4.2:0001 Java",
+"description": "v1.4.3 Java",
+"version": "1.4.3 Java",
 "minGameVersion": "142",
 "main": "SCH.TurretExJava",
 "java": true

@@ -55,7 +55,9 @@ public class schTechTree {
                     node(RukhtuskaMKIII);
                 });
                 node(HulletuseMKI, () -> {
-                    node(HulletuseMKII);
+                    node(HulletuseMKII, () -> {
+                        node(HulletuseMKIII);
+                    });
                 });
             });
             node(coalBurner, () -> {

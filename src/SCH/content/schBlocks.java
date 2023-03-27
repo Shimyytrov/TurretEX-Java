@@ -65,7 +65,10 @@ public class schBlocks {
     t2Reconstructor, t3Reconstructor,
 
     /* Generators */
-    coalBurner, steamTurbine
+    coalBurner, steamTurbine,
+
+    /* Fortresses */
+    fortCopperRot, fortCopperCor, fortCopperCorII, fortCopperTurret
     ;
 
     public static void load() {
@@ -1148,6 +1151,57 @@ public class schBlocks {
             consumeLiquid(Liquids.water, 0.1f);
             ambientSound = Vars.tree.loadSound("Power/steamTurbine");
             ambientSoundVolume = 1f;
+        }};
+        fortCopperRot = new Wall("fortress-copper-rot"){{
+            requirements(Category.defense, with(Items.copper, 36));
+            size = 2;
+            rotate = true;
+            health = 1540;
+        }};
+        fortCopperCor = new Wall("fortress-copper-cor"){{
+            requirements(Category.defense, with(Items.copper, 36));
+            size = 2;
+            rotate = true;
+            health = 1540;
+        }};
+        fortCopperCorII = new Wall("fortress-copper-corii"){{
+            requirements(Category.defense, with(Items.copper, 36));
+            size = 2;
+            rotate = true;
+            health = 1540;
+        }};
+        fortCopperTurret = new PowerTurret("fortress-copper-turret"){{
+            requirements(Category.defense, with(Items.copper, 36, Items.lead, 16));
+            range = 240f;
+            recoil = 2f;
+            reload = 8f;
+            shake = 2f;
+            shootEffect = Fx.shootSmall;
+            smokeEffect = Fx.shootBigSmoke2;
+            heatColor = Color.red;
+            size = 2;
+            health = 1540;
+            targetAir = true;
+            shootSound = Vars.tree.loadSound("Turrets/PolskiLaser");
+            coolant = consumeCoolant(0.1f);
+
+            consumePower(0.5f);
+
+            shootType = new LaserBulletType(140){{
+                colors = new Color[]{Pal.lancerLaser.cpy().a(0.4f), Pal.lancerLaser, Color.white};
+                //TODO merge
+                chargeEffect = new MultiEffect(Fx.lancerLaserCharge, Fx.lancerLaserChargeBegin);
+
+                buildingDamageMultiplier = 0.25f;
+                hitEffect = Fx.hitLancer;
+                hitSize = 4;
+                lifetime = 8f;
+                drawSize = 400f;
+                collidesAir = true;
+                length = 173f;
+                ammoMultiplier = 1f;
+                pierceCap = 4;
+            }};
         }};
     };
 };
