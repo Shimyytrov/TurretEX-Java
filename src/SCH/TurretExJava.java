@@ -17,8 +17,8 @@ public class TurretExJava extends Mod{
     public TurretExJava(){
         if(!Vars.headless){
             Events.on(ContentInitEvent.class, e -> {
-              Vars.locales = Seq.with(Vars.locales).add(new Locale("sch")).toArray(Locale.class);
-              LanguageDialog.displayNames.put("sch", "sch");
+              Vars.locales = Seq.with(Vars.locales).add(new Locale("sch_NOVA")).toArray(Locale.class);
+              LanguageDialog.displayNames.put("sch_NOVA", "sch_NOVA");
             });
           }
     }
