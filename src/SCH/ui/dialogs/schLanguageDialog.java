@@ -12,7 +12,7 @@ import java.util.*;
 
 import static mindustry.Vars.*;
 
-public class LanguageDialog extends BaseDialog{
+public class schLanguageDialog extends BaseDialog{
     public static final ObjectMap<String, String> displayNames = ObjectMap.of(
     "ca", "Català",
     "id_ID", "Bahasa Indonesia",
@@ -47,7 +47,8 @@ public class LanguageDialog extends BaseDialog{
     "th", "ไทย",
     "zh_CN", "简体中文",
     "zh_TW", "正體中文",
-    "SCH", "Schmitŕovkiy",
+    "sch_NOVA", "Schmitŕovkiy (Nova)",
+    "sch_TRA", "Schmitŕovkiy (Traditionell)",
     "ja", "日本語",
     "ko", "한국어",
     "router", "router"
@@ -55,7 +56,7 @@ public class LanguageDialog extends BaseDialog{
 
     private Locale lastLocale;
 
-    public LanguageDialog(){
+    public schLanguageDialog(){
         super("@settings.language");
         addCloseButton();
         setup();
