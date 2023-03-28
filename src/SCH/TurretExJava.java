@@ -6,7 +6,7 @@ import java.util.Locale;
 
 import SCH.content.schBlocks;
 import SCH.content.schTechTree;
-import SCH.ui.dialogs.LanguageDialog;
+import mindustry.ui.dialogs.LanguageDialog;
 import arc.*;
 import arc.struct.*;
 import mindustry.Vars;
@@ -17,8 +17,8 @@ public class TurretExJava extends Mod{
     public TurretExJava(){
         if(!Vars.headless){
             Events.on(ContentInitEvent.class, e -> {
-              Vars.locales = Seq.with(Vars.locales).add(new Locale("SCH")).toArray(Locale.class);
-              LanguageDialog.displayNames.put("SCH", "Schmitŕovkiy");
+              Vars.locales = Seq.with(Vars.locales).add(new Locale("sch")).toArray(Locale.class);
+              LanguageDialog.displayNames.put("sch", "sch");
             });
           }
     }
