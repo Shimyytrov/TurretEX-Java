@@ -77,7 +77,7 @@ public class schUnitTypes {
             accel = 0.1f;
             drag = 0.02f;
             flying = true;
-            health = 440f;
+            health = 560f;
             engineOffset = 6f;
             hitSize = 9f;
             itemCapacity = 70;
@@ -139,7 +139,7 @@ public class schUnitTypes {
             accel = 0.1f;
             drag = 0.02f;
             flying = true;
-            health = 512f;
+            health = 1024f;
             engineOffset = 6f;
             hitSize = 10f;
             itemCapacity = 100;
@@ -274,7 +274,7 @@ public class schUnitTypes {
             accel = 0.05f;
             drag = 0.017f;
             flying = true;
-            health = 360f;
+            health = 512f;
             engineOffset = 8f;
             hitSize = 9f;
             itemCapacity = 50;
@@ -341,7 +341,7 @@ public class schUnitTypes {
             constructor = UnitEntity::create;
         }};
         HulletuseMKIII = new UnitType("HulletuseMKIII"){{
-            speed = 1f;
+            speed = 2f;
             rotateSpeed = 1.9f;
             mineTier = 5;
             mineSpeed = 5f;
@@ -349,12 +349,12 @@ public class schUnitTypes {
             drag = 0.04f;
             flying = true;
             lowAltitude = true;
-            health = 7200;
-            armor = 12f;
+            health = 14544f;
+            armor = 128f;
             engineOffset = 21;
             engineSize = 5.3f;
             hitSize = 46f;
-            itemCapacity = 70;
+            itemCapacity = 100;
             targetAir = true;
             targetGround = true;
             faceTarget = false;
@@ -364,7 +364,7 @@ public class schUnitTypes {
             defaultCommand = UnitCommand.rebuildCommand;
             targetFlags = new BlockFlag[]{BlockFlag.drill, BlockFlag.turret, null};
 
-            BulletType basic = new BasicBulletType(5f, 16){{
+            BulletType basic = new BasicBulletType(5f, 32){{
                 width = 6f;
                 height = 16f;
                 lifetime = 60f;
@@ -376,7 +376,7 @@ public class schUnitTypes {
                 lightColor = Color.valueOf("00ff00");
                 collidesTeam = false;
             }};
-            BulletType minigun = new BasicBulletType(8f, 4){{
+            BulletType minigun = new BasicBulletType(8f, 8){{
                 width = 6f;
                 height = 18f;
                 lifetime = 45f;
@@ -388,7 +388,7 @@ public class schUnitTypes {
                 lightColor = Color.valueOf("ff0000");
                 collidesTeam = false;
             }};
-            BulletType missiles = new MissileBulletType(5f, 33){{
+            BulletType missiles = new MissileBulletType(5f, 64){{
                 width = 6f;
                 height = 12f;
                 lifetime = 60f;
@@ -412,7 +412,7 @@ public class schUnitTypes {
                 x = 8f;
                 mirror = true;
                 rotate = true;
-                reload = 15;
+                reload = 6;
                 recoil = 2;
                 ejectEffect = casing1;
                 shake = 2;
@@ -424,7 +424,7 @@ public class schUnitTypes {
                 x = 8f;
                 mirror = true;
                 rotate = true;
-                reload = 15;
+                reload = 6;
                 recoil = 2;
                 ejectEffect = casing1;
                 shake = 2;
@@ -436,7 +436,7 @@ public class schUnitTypes {
                 x = 12f;
                 mirror = true;
                 rotate = true;
-                reload = 2;
+                reload = 1;
                 recoil = 2;
                 ejectEffect = casing1;
                 shake = 2;
@@ -448,7 +448,7 @@ public class schUnitTypes {
                 x = 4;
                 mirror = true;
                 rotate = true;
-                reload = 30;
+                reload = 15;
                 recoil = 2;
                 ejectEffect = casing2;
                 shake = 2;
@@ -460,7 +460,7 @@ public class schUnitTypes {
                 x = 4;
                 mirror = true;
                 rotate = true;
-                reload = 30;
+                reload = 15;
                 recoil = 2;
                 ejectEffect = casing2;
                 shake = 2;
@@ -472,7 +472,7 @@ public class schUnitTypes {
                 x = 6;
                 mirror = true;
                 rotate = true;
-                reload = 20;
+                reload = 6;
                 recoil = 2;
                 ejectEffect = casing2;
                 shake = 2;

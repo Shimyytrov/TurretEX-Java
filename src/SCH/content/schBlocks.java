@@ -1075,8 +1075,8 @@ public class schBlocks {
         schAirFactory = new UnitFactory("schAirFactory"){{
             requirements(Category.units, with(Items.copper, 50, Items.lead, 35));
             plans = Seq.with(
-                new UnitPlan(schUnitTypes.RukhtuskaMKI, 60f * 10, with(Items.lead, 30, Items.graphite, 15)),
-                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 9, with(Items.silicon, 10, Items.graphite, 5))
+                new UnitPlan(schUnitTypes.RukhtuskaMKI, 60f * 5, with(Items.lead, 10, Items.graphite, 2)),
+                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 4, with(Items.silicon, 4, Items.graphite, 2))
             );
             size = 3;
             consumePower(1.5f);
@@ -1091,7 +1091,7 @@ public class schBlocks {
             consumeItems(with(Items.titanium, 15));
             health = 500;
             ambientSound = Vars.tree.loadSound("Factory/schAirFactory");
-            constructTime = 60f * 10f;
+            constructTime = 60f * 4f;
 
             upgrades.addAll(
                 new UnitType[]{schUnitTypes.RukhtuskaMKI, schUnitTypes.RukhtuskaMKII},
@@ -1103,10 +1103,10 @@ public class schBlocks {
 
             size = 3;
             consumePower(1f);
-            consumeItems(with(Items.titanium, 50, Items.silicon, 25, Items.graphite, 10));
+            consumeItems(with(Items.titanium, 50, Items.silicon, 25));
             health = 500;
             ambientSound = Vars.tree.loadSound("Factory/schAirFactory");
-            constructTime = 60f * 10f;
+            constructTime = 60f * 4f;
 
             upgrades.addAll(
                 new UnitType[]{schUnitTypes.RukhtuskaMKII, schUnitTypes.RukhtuskaMKIII},
