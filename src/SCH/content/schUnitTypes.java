@@ -31,7 +31,10 @@ import static mindustry.Vars.*;
 import static mindustry.content.Fx.*;
 
 public class schUnitTypes {
-    public static UnitType RukhtuskaMKI, RukhtuskaMKII, RukhtuskaMKIII, HulletuseMKI, HulletuseMKII, HulletuseMKIII;
+    public static UnitType
+    RukhtuskaMKI, RukhtuskaMKII, RukhtuskaMKIII, HulletuseMKI, HulletuseMKII, HulletuseMKIII,
+    
+    avmArmyTroop;
 
     public static void load(){
         RukhtuskaMKI = new UnitType("RukhtuskaMKI"){{
@@ -349,8 +352,8 @@ public class schUnitTypes {
             drag = 0.04f;
             flying = true;
             lowAltitude = true;
-            health = 14544f;
-            armor = 128f;
+            health = 4500f;
+            armor = 64f;
             engineOffset = 21;
             engineSize = 5.3f;
             hitSize = 46f;
@@ -480,6 +483,27 @@ public class schUnitTypes {
                 shootSound = Vars.tree.loadSound("Turrets/SteinMKII");
             }});
             constructor = UnitEntity::create;
+        }};
+        avmArmyTroop = new UnitType("AVM-Army-Soldier"){{
+            constructor = UnitEntity::create;
+            speed = 0.8f;
+            hitSize = 9f;
+            health = 250;
+            weapons.add(new Weapon("ak12"){{
+                reload = 8f;
+                x = 4f;
+                y = 2f;
+                top = false;
+                rotate = false;
+                mirror = false;
+                ejectEffect = Fx.casing1;
+                shootSound = Vars.tree.loadSound("Turrets/ak12");
+                bullet = new BasicBulletType(12f, 36){{
+                    width = 4f;
+                    height = 12f;
+                    lifetime = 50f;
+                }};
+            }});
         }};
     };
 };

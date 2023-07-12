@@ -1076,7 +1076,8 @@ public class schBlocks {
             requirements(Category.units, with(Items.copper, 50, Items.lead, 35));
             plans = Seq.with(
                 new UnitPlan(schUnitTypes.RukhtuskaMKI, 60f * 5, with(Items.lead, 10, Items.graphite, 2)),
-                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 4, with(Items.silicon, 4, Items.graphite, 2))
+                new UnitPlan(schUnitTypes.HulletuseMKI, 60f * 4, with(Items.silicon, 4, Items.graphite, 2)),
+                new UnitPlan(schUnitTypes.avmArmyTroop, 60f * 4, with(Items.lead, 4, Items.copper, 2))
             );
             size = 3;
             consumePower(1.5f);
