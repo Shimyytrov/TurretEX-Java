@@ -489,7 +489,7 @@ public class schUnitTypes {
             speed = 0.8f;
             hitSize = 9f;
             health = 250;
-            weapons.add(new Weapon("ak12"){{
+            weapons.add(new Weapon("ak"){{
                 reload = 8f;
                 x = 4f;
                 y = 2f;
@@ -501,7 +501,7 @@ public class schUnitTypes {
                 bullet = new BasicBulletType(12f, 36){{
                     width = 4f;
                     height = 12f;
-                    lifetime = 50f;
+                    lifetime = 15f;
                 }};
             }});
         }};
