@@ -73,7 +73,6 @@ public class schUnitTypes {
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
             }});
-            constructor = UnitEntity::create;
         }};
         RukhtuskaMKII = new UnitType("RukhtuskaMKII"){{
             speed = 5f;
@@ -135,7 +134,6 @@ public class schUnitTypes {
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/AA-sg");
             }});
-            constructor = UnitEntity::create;
         }};
         RukhtuskaMKIII = new UnitType("RukhtuskaMKIII"){{
             speed = 6f;
@@ -217,7 +215,6 @@ public class schUnitTypes {
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/AA-sg");
             }});
-            constructor = UnitEntity::create;
         }};
         HulletuseMKI = new UnitType("HulletuseMKI"){{
             speed = 4f;
@@ -269,7 +266,6 @@ public class schUnitTypes {
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/KavtashkaMKI");
             }});
-            constructor = UnitEntity::create;
         }};
         HulletuseMKII = new UnitType("HulletuseMKII"){{
             speed = 4f;
@@ -341,7 +337,6 @@ public class schUnitTypes {
                 }};
                 shootSound = Vars.tree.loadSound("Turrets/laser");
             }});
-            constructor = UnitEntity::create;
         }};
         HulletuseMKIII = new UnitType("HulletuseMKIII"){{
             speed = 2f;
@@ -482,10 +477,8 @@ public class schUnitTypes {
                 bullet = missiles;
                 shootSound = Vars.tree.loadSound("Turrets/SteinMKII");
             }});
-            constructor = UnitEntity::create;
         }};
         avmArmyTroop = new UnitType("AVM-Army-Soldier"){{
-            constructor = UnitEntity::create;
             speed = 0.8f;
             hitSize = 9f;
             health = 250;
